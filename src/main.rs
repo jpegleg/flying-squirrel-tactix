@@ -12,7 +12,6 @@ extern crate diesel;
 extern crate diesel_migrations;
 
 use dotenv::dotenv;
-use std::env;
 
 mod db;
 mod users;
@@ -30,7 +29,6 @@ async fn main() -> std::io::Result<()> {
         .run()
         .await
 }
-
 
 fn load_rustls_config() -> rustls::ServerConfig {
     let config = ServerConfig::builder()
