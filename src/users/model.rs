@@ -1,4 +1,4 @@
-se crate::db;
+use crate::db;
 use crate::error_handler::CustomError;
 use crate::schema::users;
 use diesel::prelude::*;
