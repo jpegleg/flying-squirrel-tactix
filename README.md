@@ -5,6 +5,7 @@ An Actix API microservice that uses Diesel Postgresql and rustls for TLS.
 See the non-tls version "squirrel-tactix" here: https://github.com/jpegleg/squirrel-tactix
 
 This version with rustls has rustls implemented much like morpho-web: https://github.com/jpegleg/morpho-web
+This software is designed as a backend for morpho-web, but can also can be used independently. 
 
 In order to implement rustls, the flying-squirrel-tactix uses actix-web instead of actix-rt, adds the loading
 of the `privkey.pem` and `cert.pem` and a rustls bind to a fixed port of 443.
