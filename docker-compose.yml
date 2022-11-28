@@ -1,0 +1,12 @@
+version: '3'
+services:
+  morpho:
+    image: fsql:latest
+    container_name: fsql
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    volumes:
+      - /opt/protean-gitops/backend_env:/app/.env
+      - /opt/protean-gitops/cert.pem:/app/cert.pem
+      - /opt/protean-gitops/privkey.pem:/app/privkey.pem
