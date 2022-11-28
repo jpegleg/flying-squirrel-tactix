@@ -23,3 +23,7 @@ It works just as well to use a build stage in the docker file itself.
 docker run -v $PWD:/volume --rm -t clux/muslrust:stable cargo build --release
 docker build -t "localhost:5000/flying-squirrel-tactix" .
 ```
+
+#### why not ekidd here too?
+
+11/27/22 - ekidd builder has a timing issue with zstd compiling these dependencies (rustls +), many projects that don't use rustls are not encountering the same timing issue, although several other timing scenarios have been identified in ekidd
