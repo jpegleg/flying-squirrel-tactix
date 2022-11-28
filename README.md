@@ -13,3 +13,13 @@ of the `privkey.pem` and `cert.pem` and a rustls bind to a fixed port of 443.
 
 The `.env` file can be used or environment variables inserted directly. This version uses two less variables
 than the non-tls squirrel-tactix as the host and port are fixed as `0.0.0.0:443`.
+
+## statically linked build without ekidd builder
+
+This style uses a separate pre-compile step instead of compiling during the image build.
+It works just as well to use a build stage in the docker file itself.
+
+```
+docker run -v $PWD:/volume --rm -t clux/muslrust:stable cargo build --release
+docker build -t "localhost:5000/flying-squirrel-tactix" .
+```
