@@ -43,7 +43,7 @@ CMD ["/fsql"]
 
 Actix has middleware for auth, or auth can be impelemented directly etc.
 mTLS version of flying-squirrel-tactix is doable and being tested, however rustls mTLS client auth
-is so far either far to lax or failing to authenticate correctly. I may release that
+is so far either far too lax or failing to authenticate correctly. I may release that
 code in a separate project template.
 
 Instead of auth and mTLS in the microservice (server auth rustls TLS only is provided in flying-squirrel-tactix, enough to ensure the data is encrypted in transit), using network rules or sidecare auth systems to authenticate clients
