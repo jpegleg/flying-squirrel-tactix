@@ -46,8 +46,6 @@ CMD ["/fsql"]
 
 Actix has middleware for auth, or auth can be impelemented directly etc.
 
-Default mTLS is a work in progress, for now you will have to add it if you want it. It can be done in the rustls server config. See https://github.com/jpegleg/opal-dragon/blob/main/src/server.rs
-
 Instead of auth and mTLS in the current default flying-squirrel-tactix microservice (server auth rustls TLS only is provided in flying-squirrel-tactix, enough to ensure the data is encrypted in transit), using network rules or sidecar auth systems to authenticate clients
 may be used to augment the access controls more effectively. Kubernetes Network Policy may be used to limit
 access, enforced with controllers such as those from a CNI plugin like Calico etc.
