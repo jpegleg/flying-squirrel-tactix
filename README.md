@@ -27,17 +27,17 @@ docker build -t "localhost:5000/flying-squirrel-tactix" .
 The default Dockerfile uses `distroless` instead of `scratch` as the OCI image base.
 
 ```
-# small shelless base that also mitigates kube exec
-FROM gcr.io/distroless/static-debian11
-#FROM scratch
+FROM scratch
 COPY target/x86_64-unknown-linux-musl/release/flying-squirrel-tactix /fsql
-WORKDIR /app/
+RUN mkdir -p /app/data/
 EXPOSE 443
 CMD ["/fsql"]
 ```
 #### why not ekidd here too?
 
 11/27/22 - ekidd builder has a timing issue with zstd compiling these dependencies (rustls +), many projects that don't use rustls are not encountering the same timing issue, although several other timing scenarios have been identified in ekidd
+
+2/11/24 - most of my projects have been using `cargo cross` for some time, no need for those builder images, although cross uses docker to complete the build, it has many more targets available and working
 
 ## adding Authentication, middleware, and mTLS
 
@@ -56,3 +56,4 @@ Example auth: `actix-web-middleware-keycloak-auth = "0.4.0"`
 
 The goal is to have front end services use the inserted auth/middlware against the flying-squirrel-tactix,
 and the only place with real database credentials and direct database connections is the flying-squirrel-tactix statically compiled sheless OCI image.
+
