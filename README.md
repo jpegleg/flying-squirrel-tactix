@@ -1,7 +1,5 @@
 # flying-squirrel-tactix ✈️ 🐿️ 
 
-## This build is failing now without changing the Cargo.toml. A fix might get made.
-
 An Actix API microservice that uses Diesel Postgresql and rustls for TLS.
 
 See the non-tls version "squirrel-tactix" here: https://github.com/jpegleg/squirrel-tactix
@@ -73,4 +71,7 @@ Set the database listener address to `127.0.0.1` and run flying-squirrel-tactix 
 and only allow the database to be accessed externally then through the flying-squirrel-tactix JSON API.
 
 
+## Dependencies
 
+The build (compile) will fail without the needed system dependencies (example: postgresql-all librust-openssl-dev gcc)
+See https://github.com/jpegleg/squirrel-tactix/tree/main for more help info on setup.
