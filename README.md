@@ -1,5 +1,7 @@
 # flying-squirrel-tactix ✈️ 🐿️ 
 
+## This build is failing now without changing the Cargo.toml. A fix might get made.
+
 An Actix API microservice that uses Diesel Postgresql and rustls for TLS.
 
 See the non-tls version "squirrel-tactix" here: https://github.com/jpegleg/squirrel-tactix
